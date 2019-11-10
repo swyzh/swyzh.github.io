@@ -1,0 +1,307 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <title>食物语抽卡模拟器</title>
+        <meta charset="utf-8">
+        <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+        <link rel="stylesheet" href="css/bootstrap.min.css" />
+        <link rel="stylesheet" href="css/ui.css" />
+    </head>
+    <body>
+        <div class="container">
+            <div class="row" align="center">
+                <div class="col-lg-12 col-md-12"><h2>食物语抽卡模拟器</h2></div>
+            </div>
+
+            <div class="row" align="center">
+                <div id="carousel-switch" class="carousel slide"
+                    data-interval="false" data-ride="carousel" >
+                    <!-- Indicators -->
+                    <ol class="carousel-indicators">
+                        <li data-target="#carousel-switch" data-slide-to="0" class="active"></li>
+                        <li data-target="#carousel-switch" data-slide-to="1"></li>
+                        <li data-target="#carousel-switch" data-slide-to="2"></li>
+                    </ol>
+                    <!-- Wrapper for slides -->
+                    <div class="carousel-inner" role="listbox">
+                        <div class="fit item" data-pool="event_1">
+                            <img src="img/banners/summonbg_3.png" alt="云华引春限定召唤" />
+                            <input class="carousel-item-id" type="hidden" value="0" />
+                        </div>
+                        <div class="fit item active" data-pool="normal">
+                            <img src="img/banners/summonbg_1.png" alt="寻味千古常驻召唤" />
+                            <input class="carousel-item-id" type="hidden" value="1" />
+                        </div>
+                        <div class="fit item" data-pool="event_2">
+                            <img src="img/banners/summonbg_5.png" alt="月上琢心限定召唤" />
+                            <input class="carousel-item-id" type="hidden" value="2" />
+                        </div>
+                    </div>
+                    <!-- Controls -->
+                    <a class="carousel-control left" href="#carousel-switch" role="button" data-slide="prev">
+                        <span>
+                            <img src="img/ui/left.png" style="position:absolute; top: 40%; left:30%;"/>
+                        </span>
+                        <span class="sr-only">上一个</span>
+                    </a>
+                    <a class="carousel-control right" href="#carousel-switch" role="button" data-slide="next">
+                        <span>
+                            <img src="img/ui/right.png" style="position:absolute; top: 40%; left:5%;"/>
+                        </span>
+                        <span class="sr-only">下一个</span>
+                    </a>
+                </div>
+            </div>
+
+            <div class="row"  align="center">
+                <div class="col-md-4">
+                    <img id="ico_hun_xin" src="img/ui/hunxin.png" width="32" height="32" />
+                    <span id="hun_xin"></span>
+                    <div id="tooltip" class="tip"></div>
+                    <div id="hun_xin_box" style="display: none">
+                        魂芯：<span id="hun_xin_free"></span><br/>
+                        魂芯：<span id="hun_xin_premium"></span>
+                    </div>
+                </div>
+                <div class="col-md-2"><button id="btn-buy-518" class="btn btn-default">￥648</button></div>
+                <div class="col-md-2"><button id="btn-buy-5180" class="btn btn-default">￥6480</button></div>
+                <div class="col-md-4">人民币消耗量：<span id="rmb_cost"></span></div>
+            </div>
+
+
+            <div class="row"  align="center">
+                <div class="col-lg-12" align="center">
+                    <canvas id="cards-canvas" width="1016" height="574" class="fit">
+                        当前浏览器不支持&lt;canvas&gt;标签
+                    </canvas>
+                </div>
+            </div>
+
+            <div class="row"  align="center">
+                <!-- <div class="col-md-3"><button id="btn-" class="btn btn-default">召唤一次</button></div> -->
+                <div class="col-md-3"></div>
+                <div class="col-md-3"><button id="btn-draw-once" class="btn"></button></div>
+                <div class="col-md-3"><button id="btn-draw-timesten" class="btn"></button></div>
+            </div>
+
+            <div class="row"  align="center">
+                <div class="col-md-12"></div>
+            </div>
+
+            <div class="panel panel-info">
+                <div class="panel-body">
+                    <span id="tag-history">召唤次数：<span id="summon_counter"></span><br />保底计数：<span id="bad_counter"></span></span>
+                    <button id="btn-history-clear" class="btn btn-warning pull-right">清空历史纪录</button>
+                </div>
+            </div>
+
+            <div class="panel panel-default">
+                <div class="panel-heading">御品食魂<span id="p_hero_y"></span></div>
+                <div class="panel-body" id="hero_y_list">
+                </div>
+            </div>
+
+            <div class="panel panel-default">
+                <div class="panel-heading">珍品食魂<span id="p_hero_z"></span></div>
+                <div class="panel-body" id="hero_z_list">
+                </div>
+            </div>
+
+            <div class="panel panel-default">
+                <div class="panel-heading">尚品食魂<span id="p_hero_s"></span></div>
+                <div class="panel-body" id="hero_s_list">
+                </div>
+            </div>
+
+            <div class="panel panel-default">
+                <div class="panel-heading">良品食魂<span id="p_hero_l"></span></div>
+                <div class="panel-body" id="hero_l_list">
+                </div>
+            </div>
+
+            <div class="row">
+                <img id="background" src="img/background.png" style="display:none"/>
+            </div>
+        </div>
+
+        <script src="js/jquery-2.2.4.min.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+
+        <script type="text/javascript" src="js/data.js"></script>
+        <script type="text/javascript" src="js/core.js"></script>
+        <script type="text/javascript" src="js/drawing.js"></script>
+
+        <script type="text/javascript">
+            function updateProbability() {
+                var rate;
+
+                if (window.summonCounter > 0)
+                {
+                    rate = 100 * $('#hero_y_list').children().length / window.summonCounter;
+                    rate = rate.toFixed(2);
+                    $('span#p_hero_y').text("（出货率：" + rate + "%）");
+
+                    rate = 100 * $('#hero_z_list').children().length / window.summonCounter;
+                    rate = rate.toFixed(2);
+                    $('span#p_hero_z').text("（出货率：" + rate + "%）");
+
+                    rate = 100 * $('#hero_s_list').children().length / window.summonCounter;
+                    rate = rate.toFixed(2);
+                    $('span#p_hero_s').text("（出货率：" + rate + "%）");
+
+                    rate = 100 * $('#hero_l_list').children().length / window.summonCounter;
+                    rate = rate.toFixed(2);
+                    $('span#p_hero_l').text("（出货率：" + rate + "%）");
+                }
+                else
+                {
+                    $('span#p_hero_y').text("");
+                    $('span#p_hero_z').text("");
+                    $('span#p_hero_s').text("");
+                    $('span#p_hero_l').text("");
+                }
+            }
+
+            function updateHunXin() {
+                $('span#hun_xin_free').text(window.window.HunXinFree);
+                $('span#hun_xin_premium').text(window.window.HunXinPremium);
+                $('span#hun_xin').text(window.window.HunXinFree + window.window.HunXinPremium);
+            }
+
+            function costHunXin(amount) {
+                if (window.window.HunXinFree + window.window.HunXinPremium < amount)
+                    return false;
+                var freeHunXinLeft = window.window.HunXinFree - amount;
+                if (freeHunXinLeft >= 0)
+                {
+                    window.window.HunXinFree = freeHunXinLeft;
+                }
+                else
+                {
+                    window.window.HunXinFree = 0;
+                    window.window.HunXinPremium += freeHunXinLeft;
+                }
+                updateHunXin();
+                return true;
+            }
+
+            $('#btn-buy-518').click(function() {
+                // window.HunXin += 140;
+                window.HunXinFree += 36;
+                window.HunXinPremium += 0;
+                // $('span#hun_xin').text(window.HunXin);
+                updateHunXin();
+
+                window.rmbCost += 648;
+                $('span#rmb_cost').text(window.rmbCost);
+            });
+
+            $('#btn-buy-5180').click(function() {
+                // window.HunXin += 1400;
+                window.HunXinFree += 360;
+                window.HunXinPremium += 0;
+                // $('span#hun_xin').text(window.HunXin);
+                updateHunXin();
+
+                window.rmbCost += 6480;
+                $('span#rmb_cost').text(window.rmbCost);
+            });
+
+            $('#btn-draw-once').click(function(){
+                var result = costHunXin(1);
+                if (!result) {
+                    alert("魂芯不足！");
+                    return;
+                }
+
+                window.summonCounter += 1;
+                $('span#summon_counter').text(window.summonCounter);
+
+                var card = summon(window.pool);
+                $('span#bad_counter').text(window.badCounter);
+                drawOnce(card);
+
+                updateProbability();
+            });
+
+            $('#btn-draw-timesten').click(function(){
+                var result = costHunXin(10);
+                if (!result) {
+                    alert("魂芯不足！");
+                    return;
+                }
+
+                window.summonCounter += 10;
+                $('span#summon_counter').text(window.summonCounter);
+
+                var cards = summon10combo(window.pool);
+                $('span#bad_counter').text(window.badCounter);
+
+                for (var i=0; i<cards.length; i++)
+                {
+                    var x = Math.floor(i % 6);
+                    var y = Math.floor(i / 6);
+                    if (y == 1) x += 1;
+                    var card = cards[i];
+                    drawCombo(card, x, y);
+                }
+
+                updateProbability();
+            });
+
+            $('#btn-history-clear').click(function(){
+                window.summonCounter = 0;
+                window.badCounter = 0;
+                $('#hero_y_list').empty();
+                $('#hero_z_list').empty();
+                $('#hero_s_list').empty();
+                $('#hero_l_list').empty();
+
+                $('span#summon_counter').text(window.summonCounter);
+                $('span#bad_counter').text(window.badCounter);
+                updateProbability();
+            });
+
+            //hover某处显示悬浮框
+            /*
+            $("#ico_hun_xin").mouseover(function(e){
+                $('#hun_xin_free').text(window.HunXinFree);
+                $('#hun_xin_premium').text(window.HunXinPremium);
+                $('#hun_xin_box').css("display", "block");
+            });
+            */
+
+            //鼠标离开表格隐藏悬浮框
+            $("#ico_hun_xin").mouseout(function(){
+                $('#hun_xin_box').css("display", "none");
+            });
+
+            $('#carousel-switch').on('slid.bs.carousel', function (event) {
+                var poolName = $('div.item.active').data('pool');
+                window.pool = data.pools[poolName];
+            });
+
+            $().ready(function(){
+                var c = $("canvas#cards-canvas")[0];
+                var ctx = c.getContext("2d");
+                window.imgBg = new Image();
+                window.imgBg.src = "img/background.png";
+                window.summonCounter = 0;
+                window.badCounter = 0;
+                // window.HunXin = 0
+                window.HunXinFree = 0;
+                window.HunXinPremium = 0;
+                window.rmbCost = 0;
+                window.pool = data.pools.normal;
+                $('img#banner').attr('src', window.pool.banner);
+
+                // $('span#hun_xin').text(window.HunXin);
+                updateHunXin();
+
+                imgBg.onload = function() {
+                    ctx.drawImage(window.imgBg, 0, 0);
+                }
+            });
+        </script>
+    </body>
+</html>

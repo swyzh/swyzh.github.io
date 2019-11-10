@@ -1,0 +1,51 @@
+.swiper-button-prev {
+    width: 50px;
+    height: 290px;
+    background: url(../img/ui/left_btn.png) no-repeat;
+    background-size: contain;
+}
+.swiper-button-next {
+    width: 51px;
+    height: 290px;
+    background: url(../img/ui/right_btn.png) no-repeat;
+    background-size: contain;
+}
+
+.container .row {
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+button#btn-draw-once {
+    background: url('../img/ui/summon1.png');
+    width: 179px;
+    height: 59px;
+    padding: 2px;
+}
+
+button#btn-draw-timesten {
+    background: url('../img/ui/summon10.png');
+    width: 179px;
+    height: 59px;
+    padding: 2px;
+}
+
+div#hun_xin_box {
+    display: block;
+    position: absolute;
+    width: 150px;
+    height: 44px;
+    left: 208px;
+    top: -5px;
+    background-color: #999;
+    border: 1px solid #233;
+}
+
+.fit {
+  max-width: 99%;
+  max-height: 99%;
+}
+
+.padimage {
+  padding: 2px;
+}
