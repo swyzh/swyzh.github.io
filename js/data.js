@@ -26,7 +26,7 @@ window.data = {
         "y_dhss",
         "y_dzpj",
         "y_ftq",
-        "y_jlx",
+        //"y_jlx",
         "y_jrjss",
         "y_krz",
         "y_lhxy",
@@ -37,7 +37,7 @@ window.data = {
 
       "hero_z": [
         "z_cgy",
-        "z_cshs",
+        //"z_cshs",
         "z_dbzz",
         "z_djyt",
         "z_dpr",
@@ -108,7 +108,7 @@ window.data = {
         "y_dhss",
         "y_dzpj",
         "y_ftq",
-        "y_jlx",
+        //"y_jlx",
         "y_jrjss",
         "y_krz",
         "y_lhxy",
@@ -119,7 +119,7 @@ window.data = {
 
       "hero_z": [
         "z_cgy",
-        "z_cshs",
+        //"z_cshs",
         "z_dbzz",
         "z_djyt",
         "z_dpr",
@@ -261,7 +261,8 @@ window.data = {
         {
           "id": "zx_btxl",
           "rate": 0.2
-        }],
+        }
+      ],
 
       "hero_s_up": [],
 
@@ -440,12 +441,18 @@ window.data = {
       ]
     },
 
-    "normal": {
-      "name": "寻味千古常驻召唤",
-      "banner": "https://i.loli.net/2019/11/11/lUe4yidDaKMp3bj.png",
+    "lunhuan_1": {
+      "name": "佛跳墙鸡精轮换up",
+      "banner": "https://i.loli.net/2019/11/11/mNHpcAUBXVfRqFt.png",
       "enable": 1,
 
-      "hero_y_up": [],
+      "hero_y_up": [{
+        "id": "y_ftq",
+        "rate": 0.25,
+      }, {
+        "id": "y_jrjss",
+        "rate": 0.25,
+      }],
 
       "hero_z_up": [],
 
@@ -459,9 +466,9 @@ window.data = {
         "y_cwhg",
         "y_dhss",
         "y_dzpj",
-        "y_ftq",
+        //"y_ftq",
         "y_jlx",
-        "y_jrjss",
+        //"y_jrjss",
         "y_krz",
         "y_lhxy",
         "y_lwhz",
@@ -515,12 +522,15 @@ window.data = {
       ]
     },
 
-    "normal": {
-      "name": "寻味千古常驻召唤",
-      "banner": "https://i.loli.net/2019/11/11/lUe4yidDaKMp3bj.png",
+    "lunhuan_2": {
+      "name": "吉利虾轮换up",
+      "banner": "https://i.loli.net/2019/11/11/FNemrcHT7P1pd3q.png",
       "enable": 1,
 
-      "hero_y_up": [],
+      "hero_y_up": [{
+        "id": "y_jlx",
+        "rate": 0.5,
+      }],
 
       "hero_z_up": [],
 
@@ -535,7 +545,7 @@ window.data = {
         "y_dhss",
         "y_dzpj",
         "y_ftq",
-        "y_jlx",
+        //"y_jlx",
         "y_jrjss",
         "y_krz",
         "y_lhxy",
