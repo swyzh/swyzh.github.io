@@ -68,6 +68,7 @@ function summon(pool) {
     var nmcards = pool.hero_y;
     card = summonFromPool(upcards, nmcards, "y");
     window.badCounter = 0;
+    window.noZCounter = 0;
     return card;
   }
 
@@ -78,8 +79,11 @@ function summon(pool) {
     var upcards = pool.hero_z_up;
     var nmcards = pool.hero_z;
     card = summonFromPool(upcards, nmcards, "z");
+    window.noZCounter = 0;
     return card;
   }
+
+  window.noZCounter += 1;
   if (rand <= (12 + 45) / 98) {
     // shang hero 45%
     var upcards = pool.hero_s_up;
@@ -100,6 +104,7 @@ function summmonGolden(pool) {
   var upcards = pool.hero_z_up;
   var nmcards = pool.hero_z;
   card = summonFromPool(upcards, nmcards, "z");
+  window.noZCounter = 0;
   return card;
 }
 
@@ -137,14 +142,18 @@ function shuffle(cards) {
 function summon10combo(pool) {
   var cards = new Array();
 
-  // 前8张卡正常抽
-  for (var i = 0; i < 9; i++) {
-    var card = summon(pool);
-    cards.push(card);
+  for (var i = 0; i < 10; i++) {
+    if (window.noZCounter < 9) {
+      var card = summon(pool);
+      cards.push(card);
+    } else {
+      var card = summmonGolden(pool);
+      cards.push(card);
+    }
   }
 
   // 如果前9张卡全是良尚，第10张从珍卡池中抽
-  //*
+  /*
   if (badLuck(cards)) {
     var card = summmonGolden(pool);
     cards.push(card);
