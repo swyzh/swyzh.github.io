@@ -2,7 +2,7 @@ window.data = {
   "pools": {
     "event_1": {
       "name": "云华引春限定召唤",
-      "banner": "img/banners/summonbg_3.png",
+      "banner": "https://i.loli.net/2019/11/11/8glrtIYWG7Tne2h.png",
       "enable": 1,
 
       "hero_y_up": [{
@@ -84,7 +84,7 @@ window.data = {
 
     "event_2": {
       "name": "月上琢心限定召唤",
-      "banner": "img/banners/summonbg_5.png",
+      "banner": "https://i.loli.net/2019/11/11/9NdRmLgiKqO6UyD.png",
       "enable": 1,
 
       "hero_y_up": [{
@@ -166,7 +166,7 @@ window.data = {
 
     "normal": {
       "name": "寻味千古常驻召唤",
-      "banner": "img/banners/summonbg_1.png",
+      "banner": "https://i.loli.net/2019/11/11/lUe4yidDaKMp3bj.png",
       "enable": 1,
 
       "hero_y_up": [],
@@ -241,7 +241,7 @@ window.data = {
 
     "event_3": {
       "name": "碧海澄空限定召唤",
-      "banner": "img/banners/summonbg_9.png",
+      "banner": "https://i.loli.net/2019/11/11/W2EmQxCNaO8B6Mv.png",
       "enable": 1,
 
       "hero_y_up": [{
@@ -331,7 +331,7 @@ window.data = {
 
     "normal": {
       "name": "寻味千古常驻召唤",
-      "banner": "img/banners/summonbg_1.png",
+      "banner": "https://i.loli.net/2019/11/11/lUe4yidDaKMp3bj.png",
       "enable": 1,
 
       "hero_y_up": [],
@@ -406,7 +406,7 @@ window.data = {
 
     "normal": {
       "name": "寻味千古常驻召唤",
-      "banner": "img/banners/summonbg_1.png",
+      "banner": "https://i.loli.net/2019/11/11/lUe4yidDaKMp3bj.png",
       "enable": 1,
 
       "hero_y_up": [],
@@ -481,7 +481,7 @@ window.data = {
 
     "normal": {
       "name": "寻味千古常驻召唤",
-      "banner": "img/banners/summonbg_1.png",
+      "banner": "https://i.loli.net/2019/11/11/lUe4yidDaKMp3bj.png",
       "enable": 1,
 
       "hero_y_up": [],
@@ -556,7 +556,7 @@ window.data = {
 
     "normal": {
       "name": "寻味千古常驻召唤",
-      "banner": "img/banners/summonbg_1.png",
+      "banner": "https://i.loli.net/2019/11/11/lUe4yidDaKMp3bj.png",
       "enable": 1,
 
       "hero_y_up": [],
