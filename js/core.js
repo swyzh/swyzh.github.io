@@ -1,4 +1,5 @@
 var useRandomOrgApi = false;
+var a_random = new Alea();
 
 // 获取0-1之间的实数
 function getRandom(useRandomOrg) {
@@ -17,7 +18,7 @@ function getRandom(useRandomOrg) {
     });
     randReal = randInteger / randMax;
   } else {
-    randReal = Math.random();
+    randReal = a_random();//Math.random();
   }
   return randReal;
 }
@@ -47,6 +48,7 @@ function summonFromPool(upcards, nmcards, type) {
 }
 
 function currentYPerh() {
+  console.log(window.badCounter);
   if (window.badCounter <= 50) {
     return 0.02;
   }
@@ -56,12 +58,17 @@ function currentYPerh() {
   if (window.badCounter <= 70) {
     return 0.22 + 0.03 * (window.badCounter - 60);
   }
-  return 0.52 + 0.05 * (window.badCounter - 70);
+  if (window.badCounter <= 80) {
+    return 0.52 + 0.05 * (window.badCounter - 70);
+  }
+  return 1;
 }
 
 function summon(pool) {
   var rand = getRandom(useRandomOrgApi);
   var card = new Object();
+  console.log(rand);
+  console.log(currentYPerh());
   if (rand <= currentYPerh()) {
     // yu hero 2%
     var upcards = pool.hero_y_up;
@@ -130,7 +137,29 @@ function badLuck(cards) {
 }
 
 function shuffle(cards) {
+  cards.sort(function(a, b) {
+    code = {
+      "y": 1,
+      "z": 2,
+      "s": 3,
+      "l": 4
+    };
+    al = code[a.type[0]];
+    bl = code[b.type[0]];
+    return bl - al;
+  });
+  //return cards;
   var shuffled = new Array();
+  for (i=0;i < cards.length;i+=2) {
+    shuffled.push(cards[i]);
+  }
+  var ll = cards.length - 1;
+  if(cards.length % 2) ll -= 1;
+  for (i=ll;i >= 0;i-=2) {
+    shuffled.push(cards[i]);
+  }
+  return shuffled;
+
   while (cards.length > 0) {
     var index = parseInt(Math.random() * cards.length);
     shuffled.push(cards[index]);
