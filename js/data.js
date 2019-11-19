@@ -661,7 +661,7 @@ window.data = {
       ],
 
       "hero_s": [
-        "sx_htjnyx",
+        //"sx_htjnyx",
         "s_bthl",
         "s_bzf",
         "s_dzm",
