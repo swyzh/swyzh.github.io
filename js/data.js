@@ -600,14 +600,23 @@ window.data = {
       ]
     },
 
-    "normal": {
-      "name": "寻味千古常驻召唤",
-      "banner": "https://i.loli.net/2019/11/11/lUe4yidDaKMp3bj.png",
+    "eventtest_1": {
+      "name": "大白鹅限定up",
+      "banner": "https://i.loli.net/2019/11/19/dwYRyJEsFKMI7lp.png",
       "enable": 1,
 
-      "hero_y_up": [],
+      "hero_y_up": [{
+        "id": "yx_tby",
+        "rate": 0.5,
+      }, {
+        "id": "yx_dbe",
+        "rate": 0.5,
+      }],
 
-      "hero_z_up": [],
+      "hero_z_up": [{
+        "id": "zx_sxzj",
+        "rate": 0.2,
+      }],
 
       "hero_s_up": [],
 
@@ -652,6 +661,7 @@ window.data = {
       ],
 
       "hero_s": [
+        "sx_htjnyx",
         "s_bthl",
         "s_bzf",
         "s_dzm",
