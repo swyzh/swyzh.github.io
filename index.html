@@ -90,7 +90,7 @@
 
     <div class="row" align="center">
       <div class="col-md-4">
-        <img id="ico_hun_xin" src="img/ui/hunxin.png" width="32" height="32" />
+        <img id="ico_hun_xin" src="img/ui/hunxin.png" width="32" height="32" onclick="javascript:sansan()" />
         <span id="hun_xin"></span>
         <div id="tooltip" class="tip"></div>
         <div id="hun_xin_box" style="display: none">
@@ -167,6 +167,7 @@
   <script type="text/javascript" src="js/data.js"></script>
   <script type="text/javascript" src="js/core.js"></script>
   <script type="text/javascript" src="js/drawing.js"></script>
+  <script type="text/javascript" src="js/md5.js"></script>
 
   <script type="text/javascript">
     function updateProbability() {
@@ -335,6 +336,20 @@
         ctx.drawImage(window.imgBg, 0, 0);
       }
     });
+
+    window.sansan_cnt = 0;
+    window.sansan_cht = false;
+
+    function sansan() {
+      window.sansan_cnt += 1;
+      if (window.sansan_cnt >= 7) {
+        var advise = prompt("请输入反馈建议：", "");
+        if(MD5(advise) == "7307eba5fcefbeabec1820e0f0412679") {
+          alert("欧洲蓝保你天下无珍");
+          window.sansan_cht = true;
+        }
+      }
+    }
   </script>
 </body>
 

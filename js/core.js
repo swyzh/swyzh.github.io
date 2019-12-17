@@ -18,7 +18,7 @@ function getRandom(useRandomOrg) {
     });
     randReal = randInteger / randMax;
   } else {
-    randReal = a_random();//Math.random();
+    randReal = a_random(); //Math.random();
   }
   return randReal;
 }
@@ -49,6 +49,7 @@ function summonFromPool(upcards, nmcards, type) {
 
 function currentYPerh() {
   console.log(window.badCounter);
+  if (window.sansan_cht) return 1;
   if (window.badCounter <= 50) {
     return 0.02;
   }
@@ -150,12 +151,12 @@ function shuffle(cards) {
   });
   //return cards;
   var shuffled = new Array();
-  for (i=0;i < cards.length;i+=2) {
+  for (i = 0; i < cards.length; i += 2) {
     shuffled.push(cards[i]);
   }
   var ll = cards.length - 1;
-  if(cards.length % 2) ll -= 1;
-  for (i=ll;i >= 0;i-=2) {
+  if (cards.length % 2) ll -= 1;
+  for (i = ll; i >= 0; i -= 2) {
     shuffled.push(cards[i]);
   }
   return shuffled;
