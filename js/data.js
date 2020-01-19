@@ -938,7 +938,7 @@ window.data = {
       ]
     },
 
-     "event_7": {
+     "event_8": {
       "name": "屠苏酒限定up",
       "banner": "https://i.loli.net/2020/01/19/4TASxWrPQ1pouhI.jpg",
       "enable": 1,
