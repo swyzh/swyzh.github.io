@@ -852,5 +852,175 @@ window.data = {
         "l_zj",
       ]
     },
+
+     "event_7": {
+      "name": "玉麟香腰限定up",
+      "banner": "https://i.loli.net/2020/01/19/6HmrG8EQ5MLjKBp.jpg",
+      "enable": 1,
+
+      "hero_y_up": [{
+        "id": "yx_ylxy",
+        "rate": 0.5,
+      }],
+
+      "hero_z_up": [{
+        "id": "zx_nnyy",
+        "rate": 0.25,
+      }],
+
+      "hero_s_up": [{
+        "id": "sx_ng",
+        "rate": 0.25,
+      }],
+
+      "hero_l_up": [],
+
+      "hero_y": [
+        "y_bjky",
+        "y_bxghnlh",
+        "y_cwhg",
+        "y_dhss",
+        "y_dzpj",
+        "y_ftq",
+        "y_jlx",
+        "y_jrjss",
+        "y_krz",
+        "y_lhxy",
+        "y_lwhz",
+        "y_slyx",
+        "y_ypg",
+        "y_ksbc",
+      ],
+
+      "hero_z": [
+        "z_cgy",
+        "z_cshs",
+        "z_dbzz",
+        "z_djyt",
+        "z_dpr",
+        "z_dynr",
+        "z_fljsj",
+        "z_gbjd",
+        "z_gbr",
+        "z_jhj",
+        "z_lxs",
+        "z_mpdf",
+        "z_mzcs",
+        "z_ssgy",
+        "z_sxwz",
+        "z_xhcy",
+        "z_xj",
+        "z_xjdmg",
+        "z_yzcf",
+      ],
+
+      "hero_s": [
+        "s_bthl",
+        "s_bzf",
+        "s_dzm",
+        "s_kzj",
+        "s_pec",
+        "s_tjyn",
+        "s_xhtb",
+        "s_yrpm",
+        "s_yxrs",
+      ],
+
+      "hero_l": [
+        "l_cj",
+        "l_jz",
+        "l_ldg",
+        "l_med",
+        "l_qt",
+        "l_spn",
+        "l_ty",
+        "l_zj",
+      ]
+    },
+
+     "event_7": {
+      "name": "屠苏酒限定up",
+      "banner": "https://i.loli.net/2020/01/19/4TASxWrPQ1pouhI.jpg",
+      "enable": 1,
+
+      "hero_y_up": [{
+        "id": "yx_tsj",
+        "rate": 0.5,
+      }],
+
+      "hero_z_up": [{
+        "id": "zx_nnyy",
+        "rate": 0.25,
+      }],
+
+      "hero_s_up": [{
+        "id": "sx_ng",
+        "rate": 0.25,
+      }],
+
+      "hero_l_up": [],
+
+      "hero_y": [
+        "y_bjky",
+        "y_bxghnlh",
+        "y_cwhg",
+        "y_dhss",
+        "y_dzpj",
+        "y_ftq",
+        "y_jlx",
+        "y_jrjss",
+        "y_krz",
+        "y_lhxy",
+        "y_lwhz",
+        "y_slyx",
+        "y_ypg",
+        "y_ksbc",
+      ],
+
+      "hero_z": [
+        "z_cgy",
+        "z_cshs",
+        "z_dbzz",
+        "z_djyt",
+        "z_dpr",
+        "z_dynr",
+        "z_fljsj",
+        "z_gbjd",
+        "z_gbr",
+        "z_jhj",
+        "z_lxs",
+        "z_mpdf",
+        "z_mzcs",
+        "z_ssgy",
+        "z_sxwz",
+        "z_xhcy",
+        "z_xj",
+        "z_xjdmg",
+        "z_yzcf",
+      ],
+
+      "hero_s": [
+        "s_bthl",
+        "s_bzf",
+        "s_dzm",
+        "s_kzj",
+        "s_pec",
+        "s_tjyn",
+        "s_xhtb",
+        "s_yrpm",
+        "s_yxrs",
+      ],
+
+      "hero_l": [
+        "l_cj",
+        "l_jz",
+        "l_ldg",
+        "l_med",
+        "l_qt",
+        "l_spn",
+        "l_ty",
+        "l_zj",
+      ]
+    },
   }
 }
